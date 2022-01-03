@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import store from './redux/redux-store';
+import PokemonList from './components/pokemon-list/pokemon-list';
+import store from './redux/redux-store';
+// import firebase from "firebase/app"
+// require('firebase/auth');
 
 function App() {
+  // var database = firebase.database();
+  // console.log(database);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store = {store}>
+      <PokemonList/>
+    </Provider>
   );
 }
 
